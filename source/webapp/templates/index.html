@@ -7,6 +7,13 @@
 {% block content %}
    <h1 class="bg-info text-white text-center">Список продуктов:</h1>
     {% csrf_token %}
+            <div class="text-center">
+                <form method="post" action="{% url 'index' %}">
+                    {% csrf_token %}
+                    {{ form }}
+                    <input type="submit" class="btn btn-primary" value="Поиск">
+                </form>
+            </div>
             {% for product in products %}
                 <div class="card mb-3 text-center">
                   <div class="card-header bg-info text-white"> Товар : '{{ product.name }}'</div>
