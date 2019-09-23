@@ -22,5 +22,6 @@ urlpatterns = [
     path('',views.products_index_view, name = 'index'),
     path('product/<int:pk>', views.products_find_view, name = 'product_view'),
     path('product/add/', views.product_add_view, name = 'product_add'),
+    path('product/update/<int:pk>', views.products_update_view, name = 'product_update'),
 
 ]
