@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}{{ article.title }}{% endblock %}
+{% block menu %}
+{#    <li class="nav-item active">#}
+{#            <a class="nav-link" href="">Удалить<span class="sr-only">(current)</span></a>#}
+{#    </li>#}
+{% endblock %}
+{% block content %}
+   <div class="container mt-5">
+            <div class="card">
+              <div class="card-header">Наименование : <h1>{{ product.name }}</h1></div>
+                  <div class="card-body">
+                      <p>Категория : <b>{{ product.get_category_display }}</b> . Цена :  <b>{{ product.price }} сом.</b></p>
+                      <p>Описание : {{ product.description | linebreaks }}</p>
+                      <p>Остаток : {{ product.balance }}</p>
+                  </div>
+            </div>
+   </div>
+{% endblock %}

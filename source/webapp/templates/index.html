@@ -11,11 +11,9 @@
                 <div class="card mb-3 text-center">
                   <div class="card-header bg-info text-white"> Товар : '{{ product.name }}'</div>
                   <div class="card-body">
-                    <p class="card-text">Описание:{{ product.description }}</p>
                     <p class="card-text">Категория:{{ product.get_category_display }}</p>
                     <p class="card-text">Цена:{{ product.price }}</p>
-                    <p class="card-text">Остаток:{{ product.balance }}</p>
-{#                    <a href="{% url 'task_view' product.pk %}" class="btn btn-info">Открыть</a>#}
+                    <a href="{% url 'product_view' product.pk %}" class="btn btn-info">Открыть</a>
 {#                    <a href="{% url 'task_update' article.pk %}" class="btn btn-info">Редактировать</a>#}
 {#                    <a href="{% url 'task_delete' article.pk %}" class="btn btn-info">Удалить</a>#}
                   </div>
