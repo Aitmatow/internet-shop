@@ -1,0 +1,75 @@
+[
+{
+  "model": "webapp.product",
+  "pk": 1,
+  "fields": {
+    "name": "\u041b\u0435\u0433\u0435\u043d\u0434\u0430",
+    "description": "1\u043b",
+    "category": "drink",
+    "balance": 10,
+    "price": "22.00"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 2,
+  "fields": {
+    "name": "Toyota Camty v50",
+    "description": "Toyota Camty v50 - 2012 \u0433\u043e\u0434",
+    "category": "car",
+    "balance": 1,
+    "price": "12000.00"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 3,
+  "fields": {
+    "name": "Asus",
+    "description": "Asus k501U - \u043d\u043e\u0443\u0442\u0431\u0443\u043a",
+    "category": "electronik",
+    "balance": 15,
+    "price": "45000.00"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 4,
+  "fields": {
+    "name": "Genious",
+    "description": "Genious - \u043f\u0440\u043e\u0432\u043e\u0434\u043d\u0430\u044f \u043c\u044b\u0448\u043a\u0430",
+    "category": "electronik",
+    "balance": 120,
+    "price": "150.00"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 5,
+  "fields": {
+    "name": "\u0413\u0430\u043b\u0441\u0442\u0443\u043a",
+    "description": "",
+    "category": "other",
+    "balance": 12,
+    "price": "650.00"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$150000$uIAFx3trfp1k$6z5z0HNybINCT4XB82O7G68p+iNBV/+rGGQfZpOEnes=",
+    "last_login": "2019-09-23T03:30:53.921Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2019-09-20T13:40:23.267Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
