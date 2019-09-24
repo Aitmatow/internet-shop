@@ -15,7 +15,11 @@
       </li>
 {% endblock %}
 {% block content %}
-   <h1 class="bg-info text-white text-center">Список продуктов:</h1>
+    {% if is_category%}
+        <h1 class="bg-info text-white text-center">Категория: {{ cur_category }}</h1>
+    {% else %}
+        <h1 class="bg-info text-white text-center">Список продуктов:</h1>
+    {% endif %}
     {% csrf_token %}
             <div class="text-center">
                 <form method="post" action="{% url 'index' %}">

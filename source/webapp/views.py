@@ -12,6 +12,7 @@ def products_index_view(request, *args, **kwargs):
             'products' : products,
             'form' : form,
             'category' : STATUS_CHOICES,
+            'is_category' : False,
         })
     elif (request.method == 'POST'):
         searched = request.POST.get('searched_value')
@@ -19,16 +20,23 @@ def products_index_view(request, *args, **kwargs):
         products = Product.objects.all().filter(name__icontains=searched).order_by('category')
         return render(request, 'index.html', context={
             'products': products ,
-            'form': form
+            'form': form,
+            'category': STATUS_CHOICES,
+            'is_category' : False,
         })
 
 def products_category_view(request, category):
+    for i in STATUS_CHOICES:
+        if category == i[0]:
+            cur_category = i[1]
     products = Product.objects.all().filter(category=category)
     form = ProductSearch()
     return render(request, 'index.html', context={
         'products' : products,
         'form' : form,
         'category': STATUS_CHOICES,
+        'is_category' : True,
+        'cur_category' : cur_category
     })
 
 
