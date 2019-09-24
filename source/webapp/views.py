@@ -1,25 +1,35 @@
 from django.shortcuts import render, get_object_or_404, redirect
 
 from webapp.forms import ProductSearch, ProductsForm
-from webapp.models import Product
-from webapp.models import STATUS_CHOICES
+from webapp.models import Product, STATUS_CHOICES
+
 
 def products_index_view(request, *args, **kwargs):
     if request.method == 'GET':
-        products = Product.objects.all().order_by('category', 'name')
+        products = Product.objects.all().order_by('category')
         form = ProductSearch()
         return render(request, 'index.html', context={
             'products' : products,
-            'form' : form
+            'form' : form,
+            'category' : STATUS_CHOICES,
         })
     elif (request.method == 'POST'):
         searched = request.POST.get('searched_value')
         form = ProductSearch()
-        products = Product.objects.all().filter(name__icontains=searched).order_by('category', 'name')
+        products = Product.objects.all().filter(name__icontains=searched).order_by('category')
         return render(request, 'index.html', context={
             'products': products ,
             'form': form
         })
+
+def products_category_view(request, category):
+    products = Product.objects.all().filter(category=category)
+    form = ProductSearch()
+    return render(request, 'index.html', context={
+        'products' : products,
+        'form' : form,
+        'category': STATUS_CHOICES,
+    })
 
 
 def products_find_view(request, pk):

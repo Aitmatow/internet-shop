@@ -1,6 +1,6 @@
 from django.db import models
 DEFAULT_STATUS = 'other'
-STATUS_CHOICES = [(DEFAULT_STATUS, 'Разное'), ('food', 'Еда'), ('car','Машина'), ('drink','Напиток'), ('electronik','Электроника')]
+STATUS_CHOICES = [(DEFAULT_STATUS, 'Разное'), ('food', 'Еда'), ('car','Машина'), ('drink','Напиток'), ('electronik','Электроника') , ('pineapple','Ананас')]
 
 # Create your models here.
 class Product(models.Model):
