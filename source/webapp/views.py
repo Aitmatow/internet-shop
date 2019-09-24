@@ -29,7 +29,7 @@ def products_category_view(request, category):
     for i in STATUS_CHOICES:
         if category == i[0]:
             cur_category = i[1]
-    products = Product.objects.all().filter(category=category)
+    products = Product.objects.all().filter(category=category).order_by('name')
     form = ProductSearch()
     return render(request, 'index.html', context={
         'products' : products,
